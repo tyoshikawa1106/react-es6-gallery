@@ -4,6 +4,7 @@ import { shallow, mount } from 'enzyme';
 import { BeerListContainer } from '../components/Todo/Todo';
 import { InputArea, BeerList } from '../components/Todo/Todo';
 import { spy } from 'sinon';
+import 'ignore-styles';
  
 describe('BeerListContainer', () => {
   it('should render InputArea and BeerList', () => {
@@ -43,7 +44,7 @@ describe('BeerListContainer', () => {
     const wrapper = mount(<BeerListContainer/>);
     wrapper.instance().addItem('Sam Adams');
     wrapper.instance().addItem('Resin');
-    expect(wrapper.find('li').length).to.equal(2);
+    expect(wrapper.find('li').length).to.equal(5);
   });
 });
 

@@ -25,3 +25,5 @@ $ cd modules
 $ cd spec
 $ mocha --require setup.js *.spec.js
 ```
+
+※Run Test is ERROR Now...

@@ -21749,9 +21749,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _CommentForm = __webpack_require__(184);
+	var _CommentForm = __webpack_require__(182);
 
-	var _CommentList = __webpack_require__(185);
+	var _CommentList = __webpack_require__(183);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21847,9 +21847,7 @@
 	}(_react.Component);
 
 /***/ },
-/* 182 */,
-/* 183 */,
-/* 184 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21975,7 +21973,7 @@
 	}(_react.Component);
 
 /***/ },
-/* 185 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21991,7 +21989,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Comment = __webpack_require__(186);
+	var _Comment = __webpack_require__(184);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22040,7 +22038,7 @@
 	}(_react.Component);
 
 /***/ },
-/* 186 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
