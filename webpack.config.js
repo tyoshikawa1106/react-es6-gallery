@@ -4,7 +4,8 @@ module.exports = {
   entry: {
     home :'./react/entry/home.js',
     todo :'./react/entry/todo.js',
-    comment :'./react/entry/comment.js'
+    comment :'./react/entry/comment.js',
+    board :'./react/entry/board.js'
   },
   output: {
     path: './react/build',

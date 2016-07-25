@@ -54,7 +54,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _HomeApp = __webpack_require__(185);
+	var _HomeApp = __webpack_require__(187);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21609,6 +21609,15 @@
 	                { href: '/comment' },
 	                'Comment'
 	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'slds-list__item nav-list' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: '/board' },
+	                'Board'
+	              )
 	            )
 	          )
 	        )
@@ -21666,7 +21675,9 @@
 /* 182 */,
 /* 183 */,
 /* 184 */,
-/* 185 */
+/* 185 */,
+/* 186 */,
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

@@ -54,11 +54,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _todo = __webpack_require__(188);
+	var _BoardApp = __webpack_require__(172);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_todo.BeerListContainer, null), document.querySelector('#root'));
+	_reactDom2.default.render(_react2.default.createElement(_BoardApp.BoardApp, null), document.querySelector('#root'));
 
 /***/ },
 /* 1 */
@@ -21093,7 +21093,80 @@
 	module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ },
-/* 172 */,
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.BoardApp = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Header = __webpack_require__(173);
+
+	var _SideMenu = __webpack_require__(178);
+
+	var _BoardBox = __webpack_require__(181);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var BoardApp = exports.BoardApp = function (_Component) {
+	  _inherits(BoardApp, _Component);
+
+	  function BoardApp() {
+	    _classCallCheck(this, BoardApp);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(BoardApp).apply(this, arguments));
+	  }
+
+	  _createClass(BoardApp, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'counter-app-component' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'slds-grid' },
+	          _react2.default.createElement(
+	            'nav',
+	            { role: 'nav', className: 'slds-col slds-size--2-of-12 siteNavi' },
+	            _react2.default.createElement(_SideMenu.SideMenu, null)
+	          ),
+	          _react2.default.createElement(
+	            'main',
+	            { className: 'slds-col slds-size--10-of-12 siteMain' },
+	            _react2.default.createElement(_Header.Header, { title: 'Board', logo: 'opportunity' }),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'slds-m-around--small' },
+	              _react2.default.createElement(_BoardBox.BoardBox, null)
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return BoardApp;
+	}(_react.Component);
+
+	;
+
+/***/ },
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -21671,14 +21744,7 @@
 
 
 /***/ },
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21686,7 +21752,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.BeerList = exports.InputArea = exports.BeerListContainer = undefined;
+	exports.BoardBox = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -21694,9 +21760,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Header = __webpack_require__(173);
-
-	var _SideMenu = __webpack_require__(178);
+	var _BoardItem = __webpack_require__(189);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21706,110 +21770,182 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var BeerListContainer = exports.BeerListContainer = function (_Component) {
-	  _inherits(BeerListContainer, _Component);
+	var BoardBox = exports.BoardBox = function (_Component) {
+	  _inherits(BoardBox, _Component);
 
-	  function BeerListContainer(props) {
-	    _classCallCheck(this, BeerListContainer);
+	  function BoardBox() {
+	    _classCallCheck(this, BoardBox);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BeerListContainer).call(this, props));
-
-	    _this.state = {
-	      beers: []
-	    };
-	    _this.addItem = _this.addItem.bind(_this);
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(BoardBox).apply(this, arguments));
 	  }
 
-	  _createClass(BeerListContainer, [{
-	    key: 'addItem',
-	    value: function addItem(name) {
-	      this.setState({
-	        beers: [].concat(this.state.beers).concat([name])
-	      });
-	    }
-	  }, {
+	  _createClass(BoardBox, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { className: 'board-box-component' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'slds-grid' },
+	          'ul',
+	          null,
 	          _react2.default.createElement(
-	            'nav',
-	            { role: 'nav', className: 'slds-col slds-size--2-of-12 siteNavi' },
-	            _react2.default.createElement(_SideMenu.SideMenu, null)
+	            'li',
+	            { className: 'slds-m-bottom--small' },
+	            _react2.default.createElement(_BoardItem.BoardItem, { opportunity: "Buy - Product01 License", account: "T.Yoshikawa Labs", amount: 3000, date: "2016/05/10" })
 	          ),
 	          _react2.default.createElement(
-	            'main',
-	            { className: 'slds-col slds-size--10-of-12 siteMain' },
-	            _react2.default.createElement(_Header.Header, { title: 'Todo', logo: 'note' }),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'slds-p-around--small' },
-	              _react2.default.createElement(InputArea, { onSubmit: this.addItem }),
-	              _react2.default.createElement(BeerList, { items: this.state.beers })
-	            )
+	            'li',
+	            { className: 'slds-m-bottom--small' },
+	            _react2.default.createElement(_BoardItem.BoardItem, { opportunity: "Buy - Product02 License", account: "T.Yoshikawa Labs", amount: 6000, date: "2016/05/11" })
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            { className: 'slds-m-bottom--small' },
+	            _react2.default.createElement(_BoardItem.BoardItem, { opportunity: "Buy - Product03 License", account: "T.Yoshikawa Labs", amount: 4500, date: "2016/05/12" })
+	          ),
+	          _react2.default.createElement(
+	            'li',
+	            { className: 'slds-m-bottom--small' },
+	            _react2.default.createElement(_BoardItem.BoardItem, { opportunity: "Buy - Product04 License", account: "T.Yoshikawa Labs", amount: 2300, date: "2016/05/13" })
 	          )
 	        )
 	      );
 	    }
 	  }]);
 
-	  return BeerListContainer;
+	  return BoardBox;
 	}(_react.Component);
 
-	var InputArea = exports.InputArea = function (_Component2) {
-	  _inherits(InputArea, _Component2);
+	;
 
-	  function InputArea(props) {
-	    _classCallCheck(this, InputArea);
+/***/ },
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
 
-	    var _this2 = _possibleConstructorReturn(this, Object.getPrototypeOf(InputArea).call(this, props));
+	'use strict';
 
-	    _this2.state = {
-	      text: ''
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.BoardItem = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	__webpack_require__(190);
+
+	var BoardItem = exports.BoardItem = function (_Component) {
+	  _inherits(BoardItem, _Component);
+
+	  function BoardItem(props) {
+	    _classCallCheck(this, BoardItem);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BoardItem).call(this, props));
+
+	    _this.state = {
+	      countNum: _this.props.amount / 2,
+	      autoCountUpId: null
 	    };
-	    _this2.setText = _this2.setText.bind(_this2);
-	    _this2.handleClick = _this2.handleClick.bind(_this2);
-	    return _this2;
+	    _this.componentDidMount = _this.componentDidMount.bind(_this);
+	    _this.autoCountup = _this.autoCountup.bind(_this);
+	    _this.autoCountupAction = _this.autoCountupAction.bind(_this);
+	    return _this;
 	  }
 
-	  _createClass(InputArea, [{
-	    key: 'setText',
-	    value: function setText(event) {
-	      this.setState({ text: event.target.value });
+	  _createClass(BoardItem, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      this.autoCountup();
 	    }
 	  }, {
-	    key: 'handleClick',
-	    value: function handleClick() {
-	      this.props.onSubmit(this.state.text);
+	    key: 'autoCountup',
+	    value: function autoCountup() {
+	      var intervalId = setInterval(this.autoCountupAction, 1);
+	      this.setState({ autoCountUpId: intervalId });
+	    }
+	  }, {
+	    key: 'autoCountupAction',
+	    value: function autoCountupAction() {
+	      if (this.state.countNum < this.props.amount) {
+	        this.setState({ countNum: this.state.countNum + 1 });
+	      } else {
+	        clearInterval(this.state.autoCountUpId);
+	      }
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'todo-component' },
+	        { className: 'board-item-component' },
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'slds-box slds-m-bottom--small' },
+	          { className: 'slds-box' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'slds-form-element' },
+	            { className: 'slds-tile slds-tile--board' },
+	            _react2.default.createElement(
+	              'p',
+	              { className: 'slds-tile__title slds-truncate' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: 'javascript:void(0);' },
+	                this.props.opportunity
+	              )
+	            ),
 	            _react2.default.createElement(
 	              'div',
-	              { className: 'slds-form-element__control slds-input-has-fixed-addon' },
-	              _react2.default.createElement('input', { className: 'slds-input', type: 'text', value: this.state.text, onChange: this.setText }),
+	              { className: 'slds-tile__detail' },
+	              _react2.default.createElement(
+	                'p',
+	                { className: 'slds-text-heading--medium amount-label' },
+	                '$',
+	                this.state.countNum
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                { className: 'slds-truncate' },
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: 'javascript:void(0);' },
+	                  this.props.account
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'p',
+	                { className: 'slds-truncate slds-has-alert' },
+	                this.props.date
+	              ),
 	              _react2.default.createElement(
 	                'span',
-	                { className: 'slds-form-element__addon' },
+	                { className: 'slds-icon_container slds-tile--board__icon' },
 	                _react2.default.createElement(
-	                  'button',
-	                  { className: 'slds-button slds-button--brand', onClick: this.handleClick },
-	                  'Add'
+	                  'svg',
+	                  { 'aria-hidden': 'true', className: 'slds-icon slds-icon-text-warning slds-icon--x-small' },
+	                  _react2.default.createElement('use', { xlinkHref: './vendor/salesforce-lightning-design-system/assets/icons/utility-sprite/svg/symbols.svg#warning' })
+	                ),
+	                _react2.default.createElement(
+	                  'span',
+	                  { className: 'slds-assistive-text' },
+	                  'Warning Icon'
 	                )
 	              )
 	            )
@@ -21819,45 +21955,50 @@
 	    }
 	  }]);
 
-	  return InputArea;
+	  return BoardItem;
 	}(_react.Component);
 
-	InputArea.PropTypes = {
-	  onSubmit: _react2.default.PropTypes.func.isRequired
-	};
+	;
 
-	var BeerList = exports.BeerList = function (_Component3) {
-	  _inherits(BeerList, _Component3);
+/***/ },
+/* 190 */
+/***/ function(module, exports, __webpack_require__) {
 
-	  function BeerList() {
-	    _classCallCheck(this, BeerList);
+	// style-loader: Adds some css to the DOM by adding a <style> tag
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(BeerList).apply(this, arguments));
-	  }
+	// load the styles
+	var content = __webpack_require__(191);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(177)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./BoardItem.scss", function() {
+				var newContent = require("!!./../../../../node_modules/css-loader/index.js!./../../../../node_modules/sass-loader/index.js!./BoardItem.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
 
-	  _createClass(BeerList, [{
-	    key: 'render',
-	    value: function render() {
-	      return this.props.items ? _react2.default.createElement(
-	        'ul',
-	        { className: 'slds-list--dotted' },
-	        this.props.items.map(function (item, index) {
-	          return _react2.default.createElement(
-	            'li',
-	            { key: index },
-	            item
-	          );
-	        })
-	      ) : null;
-	    }
-	  }]);
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
 
-	  return BeerList;
-	}(_react.Component);
+	exports = module.exports = __webpack_require__(176)();
+	// imports
 
-	BeerList.propTypes = {
-	  items: _react2.default.PropTypes.array.isRequired
-	};
+
+	// module
+	exports.push([module.id, ".board-item-component .amount-label {\n  color: #10aa52; }\n", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);

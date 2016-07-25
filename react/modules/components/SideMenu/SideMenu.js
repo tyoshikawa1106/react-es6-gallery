@@ -10,6 +10,7 @@ export class SideMenu extends Component {
             <li className="slds-list__item nav-list"><a href="/">Home</a></li>
             <li className="slds-list__item nav-list"><a href="/todo">Todo</a></li>
             <li className="slds-list__item nav-list"><a href="/comment">Comment</a></li>
+            <li className="slds-list__item nav-list"><a href="/board">Board</a></li>
           </ul>
         </div>
       </div>
