@@ -54,7 +54,7 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _todo = __webpack_require__(188);
+	var _todo = __webpack_require__(196);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21618,6 +21618,15 @@
 	                { href: '/board' },
 	                'Board'
 	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'slds-list__item nav-list' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: '/counter' },
+	                'Counter'
+	              )
 	            )
 	          )
 	        )
@@ -21678,7 +21687,15 @@
 /* 185 */,
 /* 186 */,
 /* 187 */,
-/* 188 */
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

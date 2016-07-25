@@ -5,7 +5,8 @@ module.exports = {
     home :'./react/entry/home.js',
     todo :'./react/entry/todo.js',
     comment :'./react/entry/comment.js',
-    board :'./react/entry/board.js'
+    board :'./react/entry/board.js',
+    counter :'./react/entry/counter.js'
   },
   output: {
     path: './react/build',

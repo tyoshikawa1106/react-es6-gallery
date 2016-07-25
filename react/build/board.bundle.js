@@ -21691,6 +21691,15 @@
 	                { href: '/board' },
 	                'Board'
 	              )
+	            ),
+	            _react2.default.createElement(
+	              'li',
+	              { className: 'slds-list__item nav-list' },
+	              _react2.default.createElement(
+	                'a',
+	                { href: '/counter' },
+	                'Counter'
+	              )
 	            )
 	          )
 	        )
@@ -21760,7 +21769,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _BoardItem = __webpack_require__(189);
+	var _BoardItem = __webpack_require__(182);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21819,14 +21828,7 @@
 	;
 
 /***/ },
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21850,7 +21852,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(190);
+	__webpack_require__(183);
 
 	var BoardItem = exports.BoardItem = function (_Component) {
 	  _inherits(BoardItem, _Component);
@@ -21961,13 +21963,13 @@
 	;
 
 /***/ },
-/* 190 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(191);
+	var content = __webpack_require__(184);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(177)(content, {});
@@ -21987,7 +21989,7 @@
 	}
 
 /***/ },
-/* 191 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(176)();

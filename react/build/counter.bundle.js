@@ -54,11 +54,11 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _CommentApp = __webpack_require__(185);
+	var _CounterApp = __webpack_require__(190);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_CommentApp.CommentApp, null), document.querySelector('#root'));
+	_reactDom2.default.render(_react2.default.createElement(_CounterApp.CounterApp, null), document.querySelector('#root'));
 
 /***/ },
 /* 1 */
@@ -21684,7 +21684,12 @@
 /* 182 */,
 /* 183 */,
 /* 184 */,
-/* 185 */
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21692,7 +21697,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.CommentApp = undefined;
+	exports.CounterApp = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -21704,7 +21709,7 @@
 
 	var _SideMenu = __webpack_require__(178);
 
-	var _CommentBox = __webpack_require__(186);
+	var _CounterBox = __webpack_require__(191);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21714,21 +21719,21 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var CommentApp = exports.CommentApp = function (_Component) {
-	  _inherits(CommentApp, _Component);
+	var CounterApp = exports.CounterApp = function (_Component) {
+	  _inherits(CounterApp, _Component);
 
-	  function CommentApp() {
-	    _classCallCheck(this, CommentApp);
+	  function CounterApp() {
+	    _classCallCheck(this, CounterApp);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentApp).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CounterApp).apply(this, arguments));
 	  }
 
-	  _createClass(CommentApp, [{
+	  _createClass(CounterApp, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'descusion-app-component' },
+	        { className: 'counter-app-component' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'slds-grid' },
@@ -21740,11 +21745,11 @@
 	          _react2.default.createElement(
 	            'main',
 	            { className: 'slds-col slds-size--10-of-12 siteMain' },
-	            _react2.default.createElement(_Header.Header, { title: 'Comment', logo: 'feedback' }),
+	            _react2.default.createElement(_Header.Header, { title: 'Counter', logo: 'opportunity' }),
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'slds-m-around--small' },
-	              _react2.default.createElement(_CommentBox.CommentBox, { url: '/api/comments', pollInterval: 100000 })
+	              _react2.default.createElement(_CounterBox.CounterBox, null)
 	            )
 	          )
 	        )
@@ -21752,11 +21757,13 @@
 	    }
 	  }]);
 
-	  return CommentApp;
+	  return CounterApp;
 	}(_react.Component);
 
+	;
+
 /***/ },
-/* 186 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21764,7 +21771,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.CommentBox = undefined;
+	exports.CounterBox = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -21772,9 +21779,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _CommentForm = __webpack_require__(187);
-
-	var _CommentList = __webpack_require__(188);
+	var _CounterItem = __webpack_require__(192);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21784,93 +21789,157 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var CommentBox = exports.CommentBox = function (_Component) {
-	  _inherits(CommentBox, _Component);
+	var CounterBox = exports.CounterBox = function (_Component) {
+	  _inherits(CounterBox, _Component);
 
-	  function CommentBox(props) {
-	    _classCallCheck(this, CommentBox);
+	  function CounterBox() {
+	    _classCallCheck(this, CounterBox);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CommentBox).call(this, props));
-
-	    _this.state = {
-	      data: []
-	    };
-
-	    _this.loadCommentsFromServer = _this.loadCommentsFromServer.bind(_this);
-	    _this.handleCommentSubmit = _this.handleCommentSubmit.bind(_this);
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CounterBox).apply(this, arguments));
 	  }
 
-	  _createClass(CommentBox, [{
-	    key: 'loadCommentsFromServer',
-	    value: function loadCommentsFromServer() {
-	      /*
-	      $.ajax({
-	        url: this.props.url,
-	        dataType: 'json',
-	        cache: false,
-	        success: function(data) {
-	          this.setState({data: data});
-	        }.bind(this),
-	        error: function(xhr, status, err) {
-	          console.error(this.props.url, status, err.toString());
-	        }.bind(this)
-	      });
-	      */
-	    }
-	  }, {
-	    key: 'handleCommentSubmit',
-	    value: function handleCommentSubmit(comment) {
-	      var comments = this.state.data;
-	      // Optimistically set an id on the new comment. It will be replaced by an
-	      // id generated by the server. In a production application you would likely
-	      // not use Date.now() for this and would have a more robust system in place.
-	      comment.id = Date.now();
-	      var newComments = comments.concat([comment]);
-	      this.setState({ data: newComments });
-	      /*
-	      $.ajax({
-	        url: this.props.url,
-	        dataType: 'json',
-	        type: 'POST',
-	        data: comment,
-	        success: function(data) {
-	          this.setState({data: data});
-	        }.bind(this),
-	        error: function(xhr, status, err) {
-	          this.setState({data: comments});
-	          console.error(this.props.url, status, err.toString());
-	        }.bind(this)
-	      });
-	      */
-	    }
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.loadCommentsFromServer();
-	      setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-	    }
-	  }, {
+	  _createClass(CounterBox, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'comment-box-component' },
+	        { className: 'counter-box-component' },
 	        _react2.default.createElement(
-	          'div',
-	          { className: 'commentBox' },
-	          _react2.default.createElement(_CommentForm.CommentForm, { onCommentSubmit: this.handleCommentSubmit }),
-	          _react2.default.createElement(_CommentList.CommentList, { data: this.state.data })
+	          'table',
+	          { className: 'slds-table slds-table--bordered', cellPadding: '0', cellSpacing: '0' },
+	          _react2.default.createElement(
+	            'colgroup',
+	            null,
+	            _react2.default.createElement('col', null),
+	            _react2.default.createElement('col', { width: '50' })
+	          ),
+	          _react2.default.createElement(
+	            'tbody',
+	            null,
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null),
+	            _react2.default.createElement(_CounterItem.CounterItem, null)
+	          )
 	        )
 	      );
 	    }
 	  }]);
 
-	  return CommentBox;
+	  return CounterBox;
 	}(_react.Component);
 
+	;
+
 /***/ },
-/* 187 */
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.CounterItem = undefined;
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _CounterItemValue = __webpack_require__(193);
+
+	var _CounterItemMenu = __webpack_require__(194);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CounterItem = exports.CounterItem = function (_Component) {
+	  _inherits(CounterItem, _Component);
+
+	  function CounterItem(props) {
+	    _classCallCheck(this, CounterItem);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CounterItem).call(this, props));
+
+	    _this.state = {
+	      countNum: 0,
+	      maxCountNum: 1000,
+	      autoCountUpId: null
+	    };
+	    _this.countup = _this.countup.bind(_this);
+	    _this.countdown = _this.countdown.bind(_this);
+	    _this.autoCountup = _this.autoCountup.bind(_this);
+	    _this.autoCountupAction = _this.autoCountupAction.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(CounterItem, [{
+	    key: 'countup',
+	    value: function countup() {
+	      if (this.state.countNum < this.state.maxCountNum) {
+	        this.setState({ countNum: this.state.countNum + 1 });
+	      }
+	    }
+	  }, {
+	    key: 'countdown',
+	    value: function countdown() {
+	      this.setState({ countNum: this.state.countNum - 1 });
+	    }
+	  }, {
+	    key: 'autoCountup',
+	    value: function autoCountup() {
+	      var intervalId = setInterval(this.autoCountupAction, 1);
+	      this.setState({ autoCountUpId: intervalId });
+	    }
+	  }, {
+	    key: 'autoCountupAction',
+	    value: function autoCountupAction() {
+	      if (this.state.countNum < this.state.maxCountNum) {
+	        this.setState({ countNum: this.state.countNum + 1 });
+	      } else {
+	        clearInterval(this.state.autoCountUpId);
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'tr',
+	        { className: 'counter-item-component' },
+	        _react2.default.createElement(
+	          'td',
+	          null,
+	          _react2.default.createElement(_CounterItemValue.CounterItemValue, { countNum: this.state.countNum })
+	        ),
+	        _react2.default.createElement(
+	          'td',
+	          null,
+	          _react2.default.createElement(_CounterItemMenu.CounterItemMenu, { countup: this.countup, countdown: this.countdown, autoCountup: this.autoCountup })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return CounterItem;
+	}(_react.Component);
+
+	;
+
+/***/ },
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -21878,7 +21947,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.CommentForm = undefined;
+	exports.CounterItemValue = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -21894,174 +21963,38 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var CommentForm = exports.CommentForm = function (_Component) {
-	  _inherits(CommentForm, _Component);
+	var CounterItemValue = exports.CounterItemValue = function (_Component) {
+	  _inherits(CounterItemValue, _Component);
 
-	  function CommentForm(props) {
-	    _classCallCheck(this, CommentForm);
+	  function CounterItemValue() {
+	    _classCallCheck(this, CounterItemValue);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CommentForm).call(this, props));
-
-	    _this.state = {
-	      author: "",
-	      text: ""
-	    };
-
-	    _this.handleSubmit = _this.handleSubmit.bind(_this);
-	    _this.handleAuthorChange = _this.handleAuthorChange.bind(_this);
-	    _this.handleTextChange = _this.handleTextChange.bind(_this);
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CounterItemValue).apply(this, arguments));
 	  }
 
-	  _createClass(CommentForm, [{
-	    key: "handleAuthorChange",
-	    value: function handleAuthorChange(e) {
-	      this.setState({ author: e.target.value });
-	    }
-	  }, {
-	    key: "handleTextChange",
-	    value: function handleTextChange(e) {
-	      this.setState({ text: e.target.value });
-	    }
-	  }, {
-	    key: "handleSubmit",
-	    value: function handleSubmit(e) {
-	      e.preventDefault();
-	      var author = this.state.author.trim();
-	      var text = this.state.text.trim();
-	      if (!text || !author) {
-	        return;
-	      }
-	      this.props.onCommentSubmit({ author: author, text: text });
-	      this.setState({ author: '', text: '' });
-	    }
-	  }, {
+	  _createClass(CounterItemValue, [{
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "div",
-	        { className: "comment-form-component" },
+	        { className: "counter-item-value-component" },
 	        _react2.default.createElement(
-	          "div",
-	          { className: "slds-box slds-m-bottom--small" },
-	          _react2.default.createElement(
-	            "form",
-	            { onSubmit: this.handleSubmit },
-	            _react2.default.createElement(
-	              "div",
-	              { className: "slds-form-element" },
-	              _react2.default.createElement(
-	                "label",
-	                { className: "slds-form-element__label", htmlFor: "text-input-01" },
-	                "NickName"
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "slds-form-element__control" },
-	                _react2.default.createElement("input", { type: "text", className: "slds-input", id: "text-input-01", placeholder: "Your name",
-	                  value: this.state.author, onChange: this.handleAuthorChange })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "slds-form-element" },
-	              _react2.default.createElement(
-	                "label",
-	                { className: "slds-form-element__label", htmlFor: "text-input-02" },
-	                "Comments"
-	              ),
-	              _react2.default.createElement(
-	                "div",
-	                { className: "slds-form-element__control" },
-	                _react2.default.createElement("input", { type: "text", className: "slds-input", placeholder: "Say something...",
-	                  value: this.state.text, onChange: this.handleTextChange })
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "slds-m-top--small" },
-	              _react2.default.createElement(
-	                "button",
-	                { className: "slds-button slds-button--brand" },
-	                "Post"
-	              )
-	            )
-	          )
+	          "span",
+	          { className: "slds-text-heading--large" },
+	          "$ ",
+	          this.props.countNum
 	        )
 	      );
 	    }
 	  }]);
 
-	  return CommentForm;
+	  return CounterItemValue;
 	}(_react.Component);
 
-/***/ },
-/* 188 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.CommentList = undefined;
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Comment = __webpack_require__(189);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var CommentList = exports.CommentList = function (_Component) {
-	  _inherits(CommentList, _Component);
-
-	  function CommentList() {
-	    _classCallCheck(this, CommentList);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentList).apply(this, arguments));
-	  }
-
-	  _createClass(CommentList, [{
-	    key: 'render',
-	    value: function render() {
-	      var commentNodes = this.props.data.map(function (comment) {
-	        return _react2.default.createElement(_Comment.Comment, { author: comment.author, key: comment.id, text: comment.text, avatar: './vendor/salesforce-lightning-design-system/assets/images/avatar1.jpg' });
-	      });
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'comment-list-component' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'commentList' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'slds-feed' },
-	            _react2.default.createElement(
-	              'ul',
-	              { className: 'slds-feed__list' },
-	              commentNodes
-	            )
-	          )
-	        )
-	      );
-	    }
-	  }]);
-
-	  return CommentList;
-	}(_react.Component);
+	;
 
 /***/ },
-/* 189 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -22069,7 +22002,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Comment = undefined;
+	exports.CounterItemMenu = undefined;
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -22085,57 +22018,83 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Comment = exports.Comment = function (_Component) {
-	  _inherits(Comment, _Component);
+	var CounterItemMenu = exports.CounterItemMenu = function (_Component) {
+	  _inherits(CounterItemMenu, _Component);
 
-	  function Comment() {
-	    _classCallCheck(this, Comment);
+	  function CounterItemMenu() {
+	    _classCallCheck(this, CounterItemMenu);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Comment).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CounterItemMenu).apply(this, arguments));
 	  }
 
-	  _createClass(Comment, [{
+	  _createClass(CounterItemMenu, [{
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "li",
-	        { className: "comment-component slds-feed__item" },
+	        "div",
+	        { className: "counter-item-menu-component" },
 	        _react2.default.createElement(
 	          "div",
-	          { className: "slds-media slds-comment slds-hint-parent" },
+	          { className: "slds-dropdown-trigger", "aria-expanded": "true" },
 	          _react2.default.createElement(
-	            "div",
-	            { className: "slds-media__figure" },
+	            "button",
+	            { className: "slds-button slds-button--icon-border-filled", "aria-haspopup": "true" },
 	            _react2.default.createElement(
-	              "div",
-	              { className: "slds-avatar slds-avatar--circle slds-avatar--medium" },
-	              _react2.default.createElement(
-	                "a",
-	                { className: "#void", title: "Jason Rodgers" },
-	                _react2.default.createElement("img", { src: this.props.avatar, alt: "avatar" })
-	              )
+	              "svg",
+	              { "aria-hidden": "true", className: "slds-button__icon slds-button__icon--hint" },
+	              _react2.default.createElement("use", { xlinkHref: "./vendor/salesforce-lightning-design-system/assets/icons/utility-sprite/svg/symbols.svg#down" })
+	            ),
+	            _react2.default.createElement(
+	              "span",
+	              { className: "slds-assistive-text" },
+	              "Show More"
 	            )
 	          ),
 	          _react2.default.createElement(
 	            "div",
-	            { className: "slds-media__body" },
+	            { className: "slds-dropdown slds-dropdown--right slds-dropdown--actions slds-dropdown--menu" },
 	            _react2.default.createElement(
-	              "div",
-	              { className: "slds-grid slds-grid--align-spread slds-has-flexi-truncate" },
+	              "ul",
+	              { className: "dropdown__list", role: "menu" },
 	              _react2.default.createElement(
-	                "p",
-	                { className: "slds-truncate" },
+	                "li",
+	                { className: "slds-dropdown__item" },
 	                _react2.default.createElement(
 	                  "a",
-	                  { href: "#void", title: "Design Systems" },
-	                  this.props.author
+	                  { onClick: this.props.countup, role: "menuitem" },
+	                  _react2.default.createElement(
+	                    "p",
+	                    { className: "slds-truncate" },
+	                    "Up"
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "li",
+	                { className: "slds-dropdown__item" },
+	                _react2.default.createElement(
+	                  "a",
+	                  { onClick: this.props.countdown, role: "menuitem" },
+	                  _react2.default.createElement(
+	                    "p",
+	                    { className: "slds-truncate" },
+	                    "Down"
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                "li",
+	                { className: "slds-dropdown__item" },
+	                _react2.default.createElement(
+	                  "a",
+	                  { onClick: this.props.autoCountup, role: "menuitem" },
+	                  _react2.default.createElement(
+	                    "p",
+	                    { className: "slds-truncate" },
+	                    "Auto"
+	                  )
 	                )
 	              )
-	            ),
-	            _react2.default.createElement(
-	              "div",
-	              { className: "slds-comment__content slds-text-longform" },
-	              this.props.text
 	            )
 	          )
 	        )
@@ -22143,8 +22102,10 @@
 	    }
 	  }]);
 
-	  return Comment;
+	  return CounterItemMenu;
 	}(_react.Component);
+
+	;
 
 /***/ }
 /******/ ]);

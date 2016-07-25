@@ -7,6 +7,7 @@ var routesHome = require('./routes/home');
 var routesTodo = require('./routes/todo');
 var routesComment = require('./routes/comment');
 var routesBoard = require('./routes/board');
+var routesCounter = require('./routes/counter');
 
 // Serve static files
 app.use(express.static(__dirname + '/'));
@@ -16,6 +17,7 @@ app.use('/', routesHome);
 app.use('/todo', routesTodo);
 app.use('/comment', routesComment);
 app.use('/board', routesBoard);
+app.use('/counter', routesCounter);
 
 // View Engine To ejs
 app.set('view engine', 'ejs');
